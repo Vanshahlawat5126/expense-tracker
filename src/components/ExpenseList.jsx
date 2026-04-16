@@ -239,7 +239,7 @@ function ExpenseList({ expenses, onEditExpense }) {
                         {groupedExpenses[year][month][day].map((expense) => (
                               <li key={expense.id}>
                             <div className="expense-item-info">
-                              <strong>{expense.description || 'No description'}</strong>
+                              {expense.description && <strong>{expense.description}</strong>}
                               {expense.type && <span> • {expense.type}</span>}
                               {expense.paymentMethod && <span> • {expense.paymentMethod}</span>} - ₹{Number(expense.amount).toFixed(2)}
                             </div>
